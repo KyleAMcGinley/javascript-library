@@ -1,4 +1,4 @@
-let myLibrary = ['Hello', 'how', 'are'];
+let myLibrary = [];
 
 //This function creates a book object with the title, author, pages, and read status
 function book(title, author, pages, read){
@@ -11,6 +11,9 @@ function book(title, author, pages, read){
 function addBookToLibrary(newBook){
     return myLibrary.push(newBook);
 }
+
+const harryPotter = new book('Harry Potter', 'J.K. Rowling', 1000, 'yes');
+addBookToLibrary(harryPotter);
 
 
 
@@ -30,7 +33,7 @@ function makingBookDivs(array){
 function changingEachBookDisplay(array){
     for(var i = 0; i < array.length; i++){
     const eachBook = document.querySelectorAll('.book-display > div');
-    eachBook[i].textContent = array[i];
+    eachBook[i].textContent = array[i].title + ' by ' + array[i].author + ', ' + array[i].pages + ' pages, ' + array[i].read;
     }
 }
 
