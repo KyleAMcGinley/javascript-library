@@ -11,9 +11,22 @@ function book(title, author, pages, read){
 function addBookToLibrary(newBook){
     return myLibrary.push(newBook);
 }
-//Need to write a loop function that goes through myLibrary array and displays it on website
-//Need to target the book dipslay node and use DOM to change
+//Need to target the book dipslay node and use DOM to add a book to the display
+//Need to create new div element to put into book display for each book
+const bookDisplay = document.querySelector('div.book-display');
 
-const bookDisplay = document.querySelector('div')
+function makingBookDivs(array){
+    for(var i = 0; i < array.length; i++){
+        const addedBook = document.createElement('div');
+        bookDisplay.appendChild(addedBook);
+    }
+}
 
-console.log(bookDisplay)
+
+//Need to display each index value of the array in a div
+function changingEachBookDisplay(array){
+    for(var i = 0; i < array.length; i++){
+    const eachBook = document.querySelectorAll('.book-display > div');
+    eachBook[i].textContent = array[i]
+    }
+}
