@@ -15,6 +15,11 @@ function addBookToLibrary(newBook){
 const harryPotter = new book('Harry Potter', 'J.K. Rowling', 1000, 'yes');
 addBookToLibrary(harryPotter);
 
+const lordOfTheRings = new book('Lord of the Rings', 'Tolkein', 2000, 'no');
+addBookToLibrary(lordOfTheRings);
+
+const theHobbit = new book('The Hobbit', 'Tolkein', 500, 'no');
+addBookToLibrary(theHobbit);
 
 
 //Need to target the book dipslay node and use DOM to add a book to the display
