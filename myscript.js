@@ -56,10 +56,22 @@ newBookDisplay(myLibrary)
 
 //Need to use DOM manipulation to add a form into html when a button is clicked
 const newBookButton = document.querySelector('.new-book-button');
+const formContainer = document.querySelector('.form-container');
 
-newBookButton.addEventListener('click',)
+newBookButton.addEventListener('click', addForm);
 
 //Need to create function that uses DOM manipulation to add a form to HTML
 function addForm(){
-    
+    const newForm = document.createElement('form');
+    formContainer.appendChild(newForm);
+    const newTitle = document.createElement('label for="Author:""');
+    newForm.appendChild(newTitle);
 }
+
+const popUpForm = document.querySelector('form');
+
+function showingForm(){
+    popUpForm.style.display = 'block'
+}
+
+newBookButton.addEventListener('click', showingForm)
