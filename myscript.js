@@ -30,10 +30,12 @@ function makingBookDivs(array){
 
 
 //Need to display each index value of the array in a div
+//Need to add style to create a card shape with the book info
 function changingEachBookDisplay(array){
     for(var i = 0; i < array.length; i++){
     const eachBook = document.querySelectorAll('.book-display > div');
     eachBook[i].textContent = array[i].title + ' by ' + array[i].author + ', ' + array[i].pages + ' pages, ' + array[i].read;
+    eachBook[i].style.cssText = '';
     }
 }
 
