@@ -54,4 +54,12 @@ function newBookDisplay(array){
 
 newBookDisplay(myLibrary)
 
-//Need to store user input from the form
+//Need to use DOM manipulation to add a form into html when a button is clicked
+const newBookButton = document.querySelector('.new-book-button');
+
+newBookButton.addEventListener('click',)
+
+//Need to create function that uses DOM manipulation to add a form to HTML
+function addForm(){
+    
+}
