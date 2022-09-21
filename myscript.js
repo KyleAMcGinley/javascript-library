@@ -21,12 +21,6 @@ addBookToLibrary(lordOfTheRings);
 const theHobbit = new book('The Hobbit', 'Tolkein', 500, 'no');
 addBookToLibrary(theHobbit);
 
-const hungerGames = new book('The Hunger Games', 'IDK', 200, 'no');
-addBookToLibrary(hungerGames)
-
-const exampleBook = new book('Another Book Example', 'Me', 200, 'no');
-addBookToLibrary(exampleBook);
-
 
 //Need to target the book dipslay node and use DOM to add a book to the display
 //Need to create new div element to put into book display for each book
@@ -59,3 +53,5 @@ function newBookDisplay(array){
 }
 
 newBookDisplay(myLibrary)
+
+//Need to store user input from the form
