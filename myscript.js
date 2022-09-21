@@ -12,16 +12,6 @@ function addBookToLibrary(newBook){
     return myLibrary.push(newBook);
 }
 
-const harryPotter = new book('Harry Potter', 'J.K. Rowling', 1000, 'yes');
-addBookToLibrary(harryPotter);
-
-const lordOfTheRings = new book('Lord of the Rings', 'Tolkein', 2000, 'no');
-addBookToLibrary(lordOfTheRings);
-
-const theHobbit = new book('The Hobbit', 'Tolkein', 500, 'no');
-addBookToLibrary(theHobbit);
-
-
 //Need to target the book dipslay node and use DOM to add a book to the display
 //Need to create new div element to put into book display for each book
 const bookDisplay = document.querySelector('div.book-display');
@@ -72,8 +62,20 @@ const submitButton = document.getElementById('submit-button');
 
 function useFormMakeBook(){
     var newBookTitle = document.getElementById('book_title').value;
-    console.log(newBookTitle)
+    console.log(newBookTitle);
+    var newBookAuthor = document.getElementById('book_author').value;
+    console.log(newBookAuthor)
+    var newBookPages = document.getElementById('book_pages').value;
+    console.log(newBookPages)
+    var newBookRead = document.getElementById('book_read').value;
+    console.log(newBookRead)
+
+    var newAddedBook = new book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
+    console.log(newAddedBook)
+    addBookToLibrary(newAddedBook);
+    console.log(myLibrary)
+    newBookDisplay(myLibrary)
     
 }
 
-submitButton.addEventListener('submit', useFormMakeBook)
+submitButton.addEventListener('click', useFormMakeBook)
