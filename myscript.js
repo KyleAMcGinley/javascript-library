@@ -62,19 +62,13 @@ const submitButton = document.getElementById('submit-button');
 
 function useFormMakeBook(){
     var newBookTitle = document.getElementById('book_title').value;
-    console.log(newBookTitle);
     var newBookAuthor = document.getElementById('book_author').value;
-    console.log(newBookAuthor)
     var newBookPages = document.getElementById('book_pages').value;
-    console.log(newBookPages)
     var newBookRead = document.getElementById('book_read').value;
-    console.log(newBookRead)
 
     var newAddedBook = new book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
-    console.log(newAddedBook)
     addBookToLibrary(newAddedBook);
-    console.log(myLibrary)
-    newBookDisplay(myLibrary)
+    newBookDisplay(myLibrary);
     
 }
 
