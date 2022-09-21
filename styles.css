@@ -26,3 +26,13 @@ label{
 input{
     width: min-content;
 }
+
+button[type='submit']{
+    width: min-content;
+    align-self: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1.3rem;
+    color: black;
+    background-color: green;
+}
