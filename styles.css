@@ -8,4 +8,21 @@
 form{
     display: none;
     margin: 20px;
+    flex-direction: column;
+}
+
+legend{
+    align-self: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+label{
+    font-size: 1.2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+input{
+    width: min-content;
 }
