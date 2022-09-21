@@ -26,10 +26,16 @@ function makingBookDivs(array){
 
 //Need to display each index value of the array in a div
 //Need to add style to create a card shape with the book info
+//Adding a button to each book display
+const buttonForEachBookDisplay = document.createElement('button')
+
 function changingEachBookDisplay(array){
     for(var i = 0; i < array.length; i++){
     const eachBook = document.querySelectorAll('.book-display > div');
     eachBook[i].textContent = array[i].title + ' by ' + array[i].author + ', ' + array[i].pages + ' pages, ' + array[i].read;
+    eachBook[i].appendChild(buttonForEachBookDisplay);
+    buttonForEachBookDisplay.textContent = 'Delete'
+    buttonForEachBookDisplay.style.cssText = 'display: flex; padding: 10px; font-weight: bold; position: relative; bottom: -150px; color: red;'
     eachBook[i].style.cssText = 'display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 5px; padding: 10px; font-size: 2rem; border-style: solid; border-color: black; border-width: 2px;';
     }
 }
@@ -73,3 +79,20 @@ function useFormMakeBook(){
 }
 
 submitButton.addEventListener('click', useFormMakeBook)
+
+//Add event listener to delete button that removes the book from myLibrary
+//Need to use loop to apply the delete function to each delete button
+
+function assigningEventButtons(listener, event){
+    const allButtons = document.querySelectorAll('div > button')
+
+    for(var i = 0; i < allButtons.length; i++){
+        allButtons[i].addEventListener(listener, event);
+    }
+}
+
+function deleteBook(){
+    
+}
+
+assigningEventButtons('click',)
