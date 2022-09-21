@@ -11,9 +11,9 @@ function book(title, author, pages, read){
 function addBookToLibrary(newBook){
     return myLibrary.push(newBook);
 }
+//Need to write a loop function that goes through myLibrary array and displays it on website
+//Need to target the book dipslay node and use DOM to change
 
-const harryPotter = new book('Harry Potter', 'J.K. Rowling', 1000, 'read');
+const bookDisplay = document.querySelector('div')
 
-addBookToLibrary(harryPotter);
-
-console.log(myLibrary);
+console.log(bookDisplay)
