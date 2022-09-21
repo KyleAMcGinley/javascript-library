@@ -71,7 +71,7 @@ function addForm(){
 const popUpForm = document.querySelector('form');
 
 function showingForm(){
-    popUpForm.style.display = 'block'
+    popUpForm.style.display = 'flex'
 }
 
 newBookButton.addEventListener('click', showingForm)
