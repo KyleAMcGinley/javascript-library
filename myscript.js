@@ -28,6 +28,7 @@ function makingBookButtons(array){
         const addedButton = document.createElement('button');
         const eachBook = document.querySelectorAll('.book-display > div');
         eachBook[i].appendChild(addedButton)
+        addedButton.classList.add('delete-button')
     }
 }
 
@@ -46,7 +47,7 @@ function changingEachBookDisplay(array){
 
 function changingEachButtonDisplay(array){
     for(var i = 0; i < array.length; i++){
-        const eachButton = document.querySelectorAll('.book-display > button');
+        const eachButton = document.querySelectorAll('.delete-button');
         eachButton[i].textContent = 'Delete';
         eachButton[i].style.cssText = 'display: flex; color: red; padding: 10px'
     }
@@ -59,6 +60,7 @@ function newBookDisplay(array){
     makingBookDivs(array);
     changingEachBookDisplay(array);
     makingBookButtons(array);
+    changingEachButtonDisplay(array);
 }
 
 newBookDisplay(myLibrary)
@@ -97,7 +99,6 @@ submitButton.addEventListener('click', useFormMakeBook)
 //Need to use loop to apply the delete function to each delete button
 
 const allDeleteButtons = document.querySelectorAll('button.delete-button')
-console.log(allDeleteButtons)
 
 function assigningEventButtons(listener, event){
 
