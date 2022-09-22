@@ -50,6 +50,7 @@ function changingEachButtonDisplay(array){
         const eachButton = document.querySelectorAll('.delete-button');
         eachButton[i].textContent = 'Delete';
         eachButton[i].style.cssText = 'display: flex; color: red; padding: 10px'
+        eachButton[i].addEventListener('click', deleteBook);
     }
 }
 
@@ -96,21 +97,10 @@ function useFormMakeBook(){
 submitButton.addEventListener('click', useFormMakeBook)
 
 //Add event listener to delete button that removes the book from myLibrary
-//Need to use loop to apply the delete function to each delete button
+//Will add event listener to each button in the same loop for creating the buttons
 
-const allDeleteButtons = document.querySelectorAll('button.delete-button')
 
-function assigningEventButtons(listener, event){
-
-    for(var i = 0; i < allDeleteButtons.length; i++){
-        allDeleteButtons[i].addEventListener(listener, event);
-    }
+function deleteBook(){
+    var deletedBook = event.target.parentNode;
+    deletedBook.remove();
 }
-
-function deleteBook(event){
-    const deletedBook = event.target.parentNode;
-    deletedBook.remove()
-
-}
-
-assigningEventButtons('click', deleteBook)
