@@ -104,3 +104,14 @@ function deleteBook(){
     var deletedBook = event.target.parentNode;
     deletedBook.remove();
 }
+
+//Need to make function that changes status of book read
+function changingRead(){
+    if(this.read === 'yes'){
+        this.read = 'no'
+    } else if(this.read === 'no'){
+        this.read = 'yes'
+    }
+}
+
+changingRead.prototype = Object.create(book.prototype);
