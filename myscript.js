@@ -122,10 +122,5 @@ function deleteBook(){
 //Need to make function that changes status of book read
 //Need to access the read property value for the given book
 function changeRead(){
-    var changeReadBook = event.target.parentNode;
-    changeBookText = changeReadBook.textContent;
-    changeBookArray = changeBookText.split(' ');
-    for(var i = 0; i < changeBookArray.length; i++){
-        changeBookArray[i] = 'hi'
-    }
+    console.log(myLibrary[0])
 }
