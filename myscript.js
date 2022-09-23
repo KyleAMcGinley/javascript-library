@@ -7,6 +7,8 @@ function book(title, author, pages, read){
     this.pages = pages;
     this.read = read;
 }
+
+
 //Need to make an add book function that receives user input and stores new object into myLibrary array
 function addBookToLibrary(newBook){
     return myLibrary.push(newBook);
@@ -26,9 +28,12 @@ function makingBookDivs(array){
 function makingBookButtons(array){
     for(var i = 0; i < array.length; i++){
         const addedButton = document.createElement('button');
+        const addReadButton = document.createElement('button')
         const eachBook = document.querySelectorAll('.book-display > div');
         eachBook[i].appendChild(addedButton)
+        eachBook[i].appendChild(addReadButton)
         addedButton.classList.add('delete-button')
+        addReadButton.classList.add('read-button')
     }
 }
 
@@ -48,12 +53,20 @@ function changingEachBookDisplay(array){
 function changingEachButtonDisplay(array){
     for(var i = 0; i < array.length; i++){
         const eachButton = document.querySelectorAll('.delete-button');
-        eachButton[i].textContent = 'Delete';
+        eachButton[i].textContent = ' Delete ';
         eachButton[i].style.cssText = 'display: flex; color: red; padding: 10px'
         eachButton[i].addEventListener('click', deleteBook);
     }
 }
 
+function changingEachReadButtonDisplay(array){
+    for(var i = 0; i < array.length; i++){
+        const eachButton = document.querySelectorAll('.read-button');
+        eachButton[i].textContent = ' Read ';
+        eachButton[i].style.cssText = 'display: flex; color: blue; padding: 10px'
+        eachButton[i].addEventListener('click', changeRead);
+    }
+}
 //Need to make the contents of each book object displayable on webpage
 
 //Need to combine the two functions to display myLibrary array
@@ -62,6 +75,7 @@ function newBookDisplay(array){
     changingEachBookDisplay(array);
     makingBookButtons(array);
     changingEachButtonDisplay(array);
+    changingEachReadButtonDisplay(array)
 }
 
 newBookDisplay(myLibrary)
@@ -106,12 +120,12 @@ function deleteBook(){
 }
 
 //Need to make function that changes status of book read
-function changingRead(){
-    if(this.read === 'yes'){
-        this.read = 'no'
-    } else if(this.read === 'no'){
-        this.read = 'yes'
+//Need to access the read property value for the given book
+function changeRead(){
+    var changeReadBook = event.target.parentNode;
+    changeBookText = changeReadBook.textContent;
+    changeBookArray = changeBookText.split(' ');
+    for(var i = 0; i < changeBookArray.length; i++){
+        changeBookArray[i] = 'hi'
     }
 }
-
-changingRead.prototype = Object.create(book.prototype);
