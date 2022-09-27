@@ -97,6 +97,7 @@ newBookButton.addEventListener('click', showingForm);
 const submitButton = document.getElementById('submit-button');
 
 function useFormMakeBook(){
+    const popUpForm = document.querySelector('form');
     var newBookTitle = document.getElementById('book_title').value;
     var newBookAuthor = document.getElementById('book_author').value;
     var newBookPages = document.getElementById('book_pages').value;
@@ -105,6 +106,7 @@ function useFormMakeBook(){
     var newAddedBook = new book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
     addBookToLibrary(newAddedBook);
     newBookDisplay(myLibrary);
+    popUpForm.reset();
     
 }
 
