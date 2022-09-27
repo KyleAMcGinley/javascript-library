@@ -44,7 +44,6 @@ function changingEachBookDisplay(array){
     for(var i = 0; i < array.length; i++){
     const eachBook = document.querySelectorAll('.book-display > div');
     eachBook[i].textContent = `${array[i].title} by ${array[i].author}, ${array[i].pages} pages, ${array[i].read}`;
-    eachBook[i].style.cssText = 'display: flex; flex-direction: column; justify-items: center; align-items: center; margin: 5px; padding: 10px; font-size: 2rem; border-style: solid; border-color: black; border-width: 2px;';
     }
 }
 
@@ -54,7 +53,6 @@ function changingEachButtonDisplay(array){
     for(var i = 0; i < array.length; i++){
         const eachButton = document.querySelectorAll('.delete-button');
         eachButton[i].textContent = ' Delete ';
-        
         eachButton[i].addEventListener('click', deleteBook);
     }
 }
@@ -63,7 +61,6 @@ function changingEachReadButtonDisplay(array){
     for(var i = 0; i < array.length; i++){
         const eachButton = document.querySelectorAll('.read-button');
         eachButton[i].textContent = ' Read ';
-        eachButton[i].style.cssText = 'display: flex; color: blue; padding: 10px'
         eachButton[i].addEventListener('click', changeRead);
     }
 }
