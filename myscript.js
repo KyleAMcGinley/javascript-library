@@ -6,7 +6,7 @@ function book(title, author, pages, read){
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.data = 0;
+    this.bookIDNumber = 0;
 }
 
 
@@ -46,8 +46,15 @@ function makingBookButtons(array){
 function changingEachBookDisplay(array){
     for(var i = 0; i < array.length; i++){
     const eachBook = document.querySelectorAll('.book-display > div');
-    eachBook[i].textContent = array[i].title + ' by ' + array[i].author + ', ' + array[i].pages + ' pages, ' + array[i].read;
+    eachBook[i].textContent = `${array[i].title} by ${array[i].author}, ${array[i].pages} pages, ${array[i].read}`;
     eachBook[i].style.cssText = 'display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 5px; padding: 10px; font-size: 2rem; border-style: solid; border-color: black; border-width: 2px;';
+    }
+}
+
+function changingEachBookData(array){
+    for(var i = 0; i < array.length; i++){
+        const eachBook = document.querySelectorAll('.book-display > div');
+        eachBook[i].setAttribute('data-bookID', '0');
     }
 }
 
@@ -76,7 +83,8 @@ function newBookDisplay(array){
     changingEachBookDisplay(array);
     makingBookButtons(array);
     changingEachButtonDisplay(array);
-    changingEachReadButtonDisplay(array)
+    changingEachReadButtonDisplay(array);
+    changingEachBookData(array);
 }
 
 newBookDisplay(myLibrary)
@@ -108,7 +116,8 @@ function useFormMakeBook(){
     addBookToLibrary(newAddedBook);
     newBookDisplay(myLibrary);
     addDataAttribute(newAddedBook);
-    console.log(newAddedBook.data)
+    changingDataAttribute(myLibrary);
+    
 
     popUpForm.reset();
     console.log(myLibrary)
@@ -122,8 +131,11 @@ submitButton.addEventListener('click', useFormMakeBook)
 
 
 function deleteBook(){
-    var deletedBook = event.target.parentNode;
-    deletedBook.remove();
+    var selectedBook = event.target.parentNode;
+    var selectedBookID = selectedBook.getAttribute('data-bookID');
+    myLibrary.splice(selectedBookID, 1);
+    selectedBook.remove();
+    console.log(myLibrary);
 }
 
 //Need to make function that changes status of book read
@@ -135,5 +147,13 @@ function changeRead(){
 //Need to obtain myLibrary array to access index values
 //Make function that assigns a data attribute to the new book
 function addDataAttribute(newAddedBook){
-    newAddedBook.data = myLibrary.length - 1;
+    newAddedBook.data = myLibrary.length - 1;    
 }
+
+function changingDataAttribute(array){
+    const eachBook = document.querySelectorAll('.book-display > div');
+    for(var i = 0; i < array.length; i++){
+        eachBook[i].setAttribute('data-bookID', i)
+    }
+}
+
