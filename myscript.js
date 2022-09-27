@@ -139,12 +139,6 @@ function deleteBook(){
     console.log(myLibrary);
 }
 
-//Need to make function that changes status of book read
-//Need to access the read property value for the given book
-function changeRead(){
-    console.log(myLibrary[0])
-}
-
 //Need to obtain myLibrary array to access index values
 //Make function that assigns a data attribute to the new book
 function addDataAttribute(newAddedBook){
@@ -158,3 +152,15 @@ function changingDataAttribute(array){
     }
 }
 
+//Need to make function that changes status of book read
+//Need to access the read property value for the given book
+function changeRead(){
+   var selectedChangeReadBook = event.target.parentNode;
+   var selectedChangeReadBookID = selectedChangeReadBook.getAttribute('data-bookID');
+   if(myLibrary[selectedChangeReadBookID].read == 'yes'){
+    myLibrary[selectedChangeReadBookID].read = 'no';
+   } else if (myLibrary[selectedChangeReadBookID].read == 'no'){
+    myLibrary[selectedChangeReadBookID].read = 'yes';
+   }
+   newBookDisplay(myLibrary);
+}
