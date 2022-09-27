@@ -6,7 +6,6 @@ function book(title, author, pages, read){
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.bookIDNumber = 0;
 }
 
 
@@ -19,11 +18,9 @@ function addBookToLibrary(newBook){
 //Need to create new div element to put into book display for each book
 const bookDisplay = document.querySelector('div.book-display');
 
-function makingBookDivs(array){
-    for(var i = 0; i < array.length; i++){
+function makingBookDivs(){
         const addedBook = document.createElement('div');
         bookDisplay.appendChild(addedBook);
-    }
 }
 
 function makingBookButtons(array){
@@ -72,9 +69,9 @@ function changingEachReadButtonDisplay(array){
 }
 //Need to make the contents of each book object displayable on webpage
 
-//Need to combine the two functions to display myLibrary array
+//Need to combine the functions to display myLibrary array
 function newBookDisplay(array){
-    makingBookDivs(array);
+    makingBookDivs();
     changingEachBookDisplay(array);
     makingBookButtons(array);
     changingEachButtonDisplay(array);
@@ -107,10 +104,7 @@ function useFormMakeBook(){
     var newAddedBook = new book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
     addBookToLibrary(newAddedBook);
     newBookDisplay(myLibrary);
-    addDataAttribute(newAddedBook);
     changingDataAttribute(myLibrary);
-    
-
     popUpForm.reset();
     console.log(myLibrary)
     
@@ -133,14 +127,11 @@ function deleteBook(){
 
 //Need to obtain myLibrary array to access index values
 //Make function that assigns a data attribute to the new book
-function addDataAttribute(newAddedBook){
-    newAddedBook.data = myLibrary.length - 1;    
-}
 
 function changingDataAttribute(array){
-    const eachBook = document.querySelectorAll('.book-display > div');
+    const selectedDataBook = document.querySelectorAll('.book-display > div');
     for(var i = 0; i < array.length; i++){
-        eachBook[i].setAttribute('data-bookID', i)
+        selectedDataBook[i].setAttribute('data-bookID', i)
     }
 }
 
@@ -158,5 +149,8 @@ function changeRead(){
    } else if (myLibrary[selectedChangeReadBookID].read == 'no'){
     myLibrary[selectedChangeReadBookID].read = 'yes';
    }
-   newBookDisplay(myLibrary);
+   changingEachBookDisplay(myLibrary);
+    makingBookButtons(myLibrary);
+    changingEachButtonDisplay(myLibrary);
+    changingEachReadButtonDisplay(myLibrary);
 }
