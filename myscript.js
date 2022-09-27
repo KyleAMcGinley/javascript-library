@@ -81,7 +81,9 @@ const newBookButton = document.querySelector('.new-book-button');
 const popUpForm = document.querySelector('form');
 
 function showingForm(){
+    const newBookButton = document.querySelector('.new-book-button');
     popUpForm.style.display = 'flex';
+    newBookButton.style.display = 'none';
 }
 
 function hidingForm(){
@@ -96,6 +98,7 @@ newBookButton.addEventListener('click', showingForm);
 const submitButton = document.getElementById('submit-button');
 
 function useFormMakeBook(){
+    const newBookButton = document.querySelector('.new-book-button');
     const popUpForm = document.querySelector('form');
     var newBookTitle = document.getElementById('book_title').value;
     var newBookAuthor = document.getElementById('book_author').value;
@@ -113,6 +116,7 @@ function useFormMakeBook(){
         changingDataAttribute(myLibrary);
         popUpForm.reset();
         hidingForm();
+        newBookButton.style.display = 'flex';
     }
     
 }
