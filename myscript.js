@@ -44,7 +44,7 @@ function changingEachBookDisplay(array){
     for(var i = 0; i < array.length; i++){
     const eachBook = document.querySelectorAll('.book-display > div');
     eachBook[i].textContent = `${array[i].title} by ${array[i].author}, ${array[i].pages} pages, ${array[i].read}`;
-    eachBook[i].style.cssText = 'display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 5px; padding: 10px; font-size: 2rem; border-style: solid; border-color: black; border-width: 2px;';
+    eachBook[i].style.cssText = 'display: flex; flex-direction: column; justify-items: center; align-items: center; margin: 5px; padding: 10px; font-size: 2rem; border-style: solid; border-color: black; border-width: 2px;';
     }
 }
 
@@ -54,7 +54,7 @@ function changingEachButtonDisplay(array){
     for(var i = 0; i < array.length; i++){
         const eachButton = document.querySelectorAll('.delete-button');
         eachButton[i].textContent = ' Delete ';
-        eachButton[i].style.cssText = 'display: flex; color: red; padding: 10px'
+        
         eachButton[i].addEventListener('click', deleteBook);
     }
 }
@@ -87,6 +87,10 @@ function showingForm(){
     popUpForm.style.display = 'flex';
 }
 
+function hidingForm(){
+    popUpForm.style.display = 'none'
+}
+
 newBookButton.addEventListener('click', showingForm);
 
 //Need to use the inputted values into the create new book function
@@ -106,7 +110,7 @@ function useFormMakeBook(){
     newBookDisplay(myLibrary);
     changingDataAttribute(myLibrary);
     popUpForm.reset();
-    console.log(myLibrary)
+    hidingForm();
     
 }
 
@@ -122,7 +126,6 @@ function deleteBook(){
     myLibrary.splice(selectedBookID, 1);
     selectedBook.remove();
     changingDataAttribute(myLibrary);
-    console.log(myLibrary);
 }
 
 //Need to obtain myLibrary array to access index values
@@ -139,11 +142,8 @@ function changingDataAttribute(array){
 //Need to access the read property value for the given book
 function changeRead(){
     changingDataAttribute(myLibrary);
-    console.log(myLibrary)
    var selectedChangeReadBook = event.target.parentNode;
-   console.log(selectedChangeReadBook)
    var selectedChangeReadBookID = selectedChangeReadBook.getAttribute('data-bookID');
-   console.log(selectedChangeReadBookID)
    if(myLibrary[selectedChangeReadBookID].read == 'yes'){
     myLibrary[selectedChangeReadBookID].read = 'no';
    } else if (myLibrary[selectedChangeReadBookID].read == 'no'){
