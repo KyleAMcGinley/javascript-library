@@ -135,6 +135,7 @@ function deleteBook(){
     var selectedBookID = selectedBook.getAttribute('data-bookID');
     myLibrary.splice(selectedBookID, 1);
     selectedBook.remove();
+    changingDataAttribute(myLibrary);
     console.log(myLibrary);
 }
 
