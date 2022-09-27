@@ -6,6 +6,7 @@ function book(title, author, pages, read){
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.data = 0;
 }
 
 
@@ -106,7 +107,11 @@ function useFormMakeBook(){
     var newAddedBook = new book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
     addBookToLibrary(newAddedBook);
     newBookDisplay(myLibrary);
+    addDataAttribute(newAddedBook);
+    console.log(newAddedBook.data)
+
     popUpForm.reset();
+    console.log(myLibrary)
     
 }
 
@@ -125,4 +130,10 @@ function deleteBook(){
 //Need to access the read property value for the given book
 function changeRead(){
     console.log(myLibrary[0])
+}
+
+//Need to obtain myLibrary array to access index values
+//Make function that assigns a data attribute to the new book
+function addDataAttribute(newAddedBook){
+    newAddedBook.data = myLibrary.length - 1;
 }
