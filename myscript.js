@@ -51,12 +51,7 @@ function changingEachBookDisplay(array){
     }
 }
 
-function changingEachBookData(array){
-    for(var i = 0; i < array.length; i++){
-        const eachBook = document.querySelectorAll('.book-display > div');
-        eachBook[i].setAttribute('data-bookID', '0');
-    }
-}
+
 
 function changingEachButtonDisplay(array){
     for(var i = 0; i < array.length; i++){
@@ -84,10 +79,7 @@ function newBookDisplay(array){
     makingBookButtons(array);
     changingEachButtonDisplay(array);
     changingEachReadButtonDisplay(array);
-    changingEachBookData(array);
 }
-
-newBookDisplay(myLibrary)
 
 //Need to use DOM manipulation to add a form into html when a button is clicked
 const newBookButton = document.querySelector('.new-book-button');
@@ -155,8 +147,12 @@ function changingDataAttribute(array){
 //Need to make function that changes status of book read
 //Need to access the read property value for the given book
 function changeRead(){
+    changingDataAttribute(myLibrary);
+    console.log(myLibrary)
    var selectedChangeReadBook = event.target.parentNode;
+   console.log(selectedChangeReadBook)
    var selectedChangeReadBookID = selectedChangeReadBook.getAttribute('data-bookID');
+   console.log(selectedChangeReadBookID)
    if(myLibrary[selectedChangeReadBookID].read == 'yes'){
     myLibrary[selectedChangeReadBookID].read = 'no';
    } else if (myLibrary[selectedChangeReadBookID].read == 'no'){
