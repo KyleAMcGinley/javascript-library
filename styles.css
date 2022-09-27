@@ -1,13 +1,28 @@
-.library{
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+
+}.library{
     display: flex;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 .book-display{
     display: flex;
-    width: 100%;
-    height: 400px;
+    max-width: 100%;
     justify-content: center;
+}
+
+.book-display > div{
+    background-color: aqua;
+    color: black;
+
+}
+
+.delete-button{
+    background-color: red;
+    color: black;
 }
 
 form{
