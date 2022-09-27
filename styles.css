@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
+    background-color: beige;
 
 }.library{
     display: flex;
@@ -11,40 +12,84 @@
 .book-display{
     display: flex;
     max-width: 100%;
+    max-height: 600px;
     justify-content: center;
 }
 
 .book-display > div{
-    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    height: 260px;
+    padding: 10px;
+    margin: 10px;
+    justify-content: center;
+    background-color: burlywood;
     color: black;
 
 }
 
 .delete-button{
+    position: relative;
+    bottom: -110px;
+    width: 33%;
+    align-self: center;
+    background-color: tan;
+    color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+}
+
+.delete-button:hover{
     background-color: red;
     color: black;
+    font-weight: bold;
+}
+
+.read-button{
+    position: relative;
+    bottom: 130px;
+    background-color: tan;
+    color: black;
+    width: 33%;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    align-self: center;
+}
+
+.read-button:hover{
+    background-color: lime;
+    font-weight: bold;
 }
 
 form{
     display: none;
-    margin: 20px;
+    margin-top: 300px;
     flex-direction: column;
+    align-items: center;
 }
 
 legend{
     align-self: center;
-    font-size: 1.5rem;
+    font-size: 2.0rem;
     font-weight: bold;
+    padding-bottom: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 label{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 input{
     width: min-content;
+    background-color: white;
 }
 
 button[type='button']{
@@ -53,6 +98,24 @@ button[type='button']{
     margin: 10px;
     padding: 10px;
     font-size: 1.3rem;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
     color: black;
     background-color: green;
+}
+
+button[type='button']:hover{
+    background-color: white;
+    font-weight: bold;
+}
+
+.new-book-button{
+    padding: 20px;
+    background-color: khaki;
+    font-size: 1.3rem;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
 }
