@@ -25,6 +25,7 @@
     border-width: 2px;
     border-style: solid;
     height: 260px;
+    width: 200px;
     padding: 20px;
     font-size: 1.5rem;
     justify-content: center;
@@ -33,9 +34,11 @@
 
 }
 
+.delete-button, .read-button{
+    margin-top: 25px;
+}
 .delete-button{
-    position: relative;
-    bottom: -110px;
+    justify-self: end;
     width: 33%;
     align-self: center;
     background-color: tan;
@@ -52,8 +55,7 @@
 }
 
 .read-button{
-    position: relative;
-    bottom: 130px;
+    justify-self: end;
     background-color: tan;
     color: black;
     width: 33%;
