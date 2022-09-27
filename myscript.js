@@ -101,19 +101,18 @@ function useFormMakeBook(){
     var newBookAuthor = document.getElementById('book_author').value;
     var newBookPages = document.getElementById('book_pages').value;
     var newBookRead = document.getElementById('book_read').value;
+    console.log(newBookRead)
 
-    if(newBookRead !== 'yes' || 'no'){
-        alert("Please input 'yes' or 'no'");
+    if(!(newBookRead == 'yes' || newBookRead == 'no')){
+        alert('Please enter "yes" or "no"')
         popUpForm.reset();
-    }else{
-
-    var newAddedBook = new book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
-    addBookToLibrary(newAddedBook);
-    newBookDisplay(myLibrary);
-    changingDataAttribute(myLibrary);
-    popUpForm.reset();
-    hidingForm();
-
+    } else{
+        var newAddedBook = new book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
+        addBookToLibrary(newAddedBook);
+        newBookDisplay(myLibrary);
+        changingDataAttribute(myLibrary);
+        popUpForm.reset();
+        hidingForm();
     }
     
 }
